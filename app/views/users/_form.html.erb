@@ -16,7 +16,7 @@
     <%= render 'item_fields', f: item %>
   <% end %>
   <div class="links">
-    <%= f.link_to_add_association 'add item', :items %>
+    <%= link_to_add_association 'add item', f,:items %>
   </div>
 </div>
 <%= f.submit %>

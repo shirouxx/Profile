@@ -10,5 +10,14 @@
   <%= @user.sex %>
 </p>
 
+<p>
+  <strong>Profile:</strong>
+  <% @item.each do |item| %><br>
+  <%= item %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<% console %>
