@@ -1,3 +1,7 @@
-<%= video_tag "Into-The-Woods.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
-<h1> Welcome to Profile-Cite</h1>
-<%= link_to 'Create Profile',users_path %>
+<div class = "video">
+<%= video_tag "back.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
+</div>
+ <div class="overlay">
+	 <h1> Welcome to Profile-Cite</h1>
+	 <p><%= link_to 'Create Profile',users_path %></p>
+ </div>
