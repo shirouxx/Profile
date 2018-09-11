@@ -1,0 +1,24 @@
+<%= form_for @user do |f| %>
+<div class="field">
+  <%= f.label :name %>
+  <br/>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :sex %>
+  <br/>
+  <%= f.text_field :sex %>
+</div>
+
+<h3>Items</h3>
+<div id="items">
+  <%= f.fields_for :items do |item| %>
+    <%= render 'item_fields', f: item %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association 'add item', f, :items %>
+  </div>
+</div>
+<%= f.submit %>
+<% end %>
+<% console %>
