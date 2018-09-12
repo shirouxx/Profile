@@ -91,15 +91,11 @@ background-size: cover;
   margin-bottom: 20px;
   font-size: 15px;
 }
+.overlay a {
+  color: #008080;
+}
+a:hover { color: #008000; }
 
-/* .video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  background-size: cover;
+/* .nav {
+ float: right;
 } */

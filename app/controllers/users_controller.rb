@@ -8,17 +8,23 @@ class UsersController < ApplicationController
   end
 
   def top
+    render :layout => 'top'
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find_by(id: params[:id])
     @item = @user.items.pluck(:profile)
   end
 
   # GET /users/new
   def new
-    @user = User.new
+    @user = User.new(
+      name: params[:name],
+      sex: params[:sex],
+      user_id: current_youser.id
+    )
     @item = @user.items.build
   end
 
@@ -31,6 +37,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     #ここの記述、redirect_toの帰り値を個人情報を表示するだけに止める。
+    #作り終わった後は、自分のページへのリンクおよび、他者のページを確認出来る検索機能の導入
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }

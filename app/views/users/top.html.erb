@@ -3,9 +3,23 @@
 </div>
  <div class="overlay">
 	 <h1> Welcome to Viewer</h1>
-	 <h2>Look for a story</h2>
-	 <h3>you haven't come across yet</h3>
   <% if youser_signed_in? %>
+  <p>こんにちは、<%= current_youser.username %>さん</p>
 	 <p><%= link_to 'Create Profile',new_user_path %></p>
+   <p><%= link_to 'See all the users',users_path %></p>
+   <p><%= link_to 'ログアウト', destroy_youser_session_path, method: :delete %></p>
+  <% else %>
+  <h2>Look for a person</h2>
+  <h3>you haven't come across yet</h3>
+  <p><%= link_to 'サインアップ', new_youser_registration_path %></p>
+  <p><%= link_to 'ログイン', new_youser_session_path %></p>
    <% end %>
  </div>
+<% console %>
+
+<!-- <% if youser_signed_in? %>
+<%= link_to 'プロフィール変更', edit_youser_registration_path %>
+
+<% else %>
+
+<% end %> -->
