@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Profile</title>
+    <title>Viewer</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <header>
+            <nav>
+                <% if youser_signed_in? %>
+                <%= link_to 'プロフィール変更', edit_youser_registration_path %>
+                <%= link_to 'ログアウト', destroy_youser_session_path, method: :delete %>
+            <% else %>
+                <%= link_to 'サインアップ', new_youser_registration_path %>
+                <%= link_to 'ログイン', new_youser_session_path %>
+                <% end %>
+            </nav>
+        </header>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>

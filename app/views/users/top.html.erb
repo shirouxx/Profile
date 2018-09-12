@@ -1,7 +1,11 @@
 <div class = "video">
-<%= video_tag "back.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
+<%= video_tag "back.mp4",autoplay: true, loop: true,preload: true,class: "video" %>
 </div>
  <div class="overlay">
-	 <h1> Welcome to Profile-Cite</h1>
-	 <p><%= link_to 'Create Profile',users_path %></p>
+	 <h1> Welcome to Viewer</h1>
+	 <h2>Look for a story</h2>
+	 <h3>you haven't come across yet</h3>
+  <% if youser_signed_in? %>
+	 <p><%= link_to 'Create Profile',new_user_path %></p>
+   <% end %>
  </div>
