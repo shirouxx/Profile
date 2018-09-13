@@ -19,6 +19,7 @@
     <%= link_to_add_association 'add item', f,:items %>
   </div>
 </div>
+<%= f.hidden_field :youser_id,:value =>current_youser.id %>
 <%= f.submit %>
+
 <% end %>
-<% console %>

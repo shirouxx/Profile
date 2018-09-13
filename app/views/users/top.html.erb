@@ -5,7 +5,7 @@
 	 <h1> Welcome to Viewer</h1>
   <% if youser_signed_in? %>
   <p>こんにちは、<%= current_youser.username %>さん</p>
-	 <p><%= link_to 'Create Profile',new_user_path %></p>
+	 <p><%= link_to 'Create Profile',new_user_path(current_youser) %></p>
    <p><%= link_to 'See all the users',users_path %></p>
    <p><%= link_to 'ログアウト', destroy_youser_session_path, method: :delete %></p>
   <% else %>

@@ -20,11 +20,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new(
-      name: params[:name],
-      sex: params[:sex],
-      user_id: current_youser.id
-    )
+    @user = User.new
     @item = @user.items.build
   end
 
@@ -35,6 +31,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    console
     @user = User.new(user_params)
     #ここの記述、redirect_toの帰り値を個人情報を表示するだけに止める。
     #作り終わった後は、自分のページへのリンクおよび、他者のページを確認出来る検索機能の導入
@@ -81,6 +78,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name,:sex,items_attributes: [:id,:profile,:user_id,:_destroy])
+      params.require(:user).permit(:name,:sex,:youser_id,items_attributes: [:id,:profile,:user_id,:_destroy])
     end
 end
