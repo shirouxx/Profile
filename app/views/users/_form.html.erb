@@ -19,6 +19,7 @@
     <%= link_to_add_association 'add item', f,:items %>
   </div>
 </div>
+<!-- userを作成する際に youser_idをvalueを指定して紐付けするためにhidden_fieldを仕様 -->
 <%= f.hidden_field :youser_id,:value =>current_youser.id %>
 <%= f.submit %>
 
